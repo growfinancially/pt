@@ -23,6 +23,7 @@
       position: sticky;
       top: 0;
       left: 0;
+      z-index: 1000;
     }
 
     main {
@@ -36,7 +37,7 @@
 
     /* Estilo da frase destaque */
     h2.atencao {
-      color: #d3d3d3; /* verde chamativo */
+      color: #e0ffe0; /* verde claro para melhor contraste */
       text-align: center;
       font-size: 24px;
       font-weight: bold;
@@ -60,9 +61,11 @@
       border-radius: 8px;
       font-size: 18px;
       font-weight: bold;
-      width: 250px;
+      width: 100%;
+      max-width: 250px;
       transition: all 0.3s ease;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* sombra */
+      text-shadow: 0px 1px 2px rgba(0,0,0,0.3);
     }
 
     a.button:hover {
@@ -79,6 +82,17 @@
       padding: 10px;
       font-size: 14px;
     }
+
+    /* Responsividade */
+    @media (max-width: 400px) {
+      h2.atencao {
+        font-size: 20px;
+      }
+      a.button {
+        font-size: 16px;
+        padding: 12px 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -90,16 +104,18 @@
     <h2 class="atencao">O primeiro passo para mudar começa aqui👇 </h2>
 
     <!-- Botões -->
-    <a href="https://hotmart.com/pt-br/marketplace/produtos/o-segredo-para-lucrar-em-portugal/H98423270W" class="button" target="_blank">Exclusivo para Portugal 🇵🇹</a>
-    <a href="https://growfinancially.github.io/ao/angola.html" class="button" target="_blank">Suas edições de besico a premium 🇦🇴</a>
+    <a href="https://hotmart.com/pt-br/marketplace/produtos/o-segredo-para-lucrar-em-portugal/H98423270W" class="button" target="_blank" rel="noopener noreferrer">Exclusivo para Portugal 🇵🇹</a>
+    <a href="https://growfinancially.github.io/ao/angola.html" class="button" target="_blank" rel="noopener noreferrer">Suas edições de besico a premium 🇦🇴</a>
+    <a href="https://go.hotmart.com/S102958876T" class="button" target="_blank" rel="noopener noreferrer">Renda Multiplataforma</a>
     
   </main>
 
   <footer>
-    @grow financially.Jackson Contreiras
+    @grow financially. Jackson Contreiras
   </footer>
 </body>
 </html>
+
 
 
 
