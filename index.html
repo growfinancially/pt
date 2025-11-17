@@ -1,123 +1,171 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🌱 grow financially</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #211b15; /* fundo escuro */
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌱 grow financially</title>
 
-    header {
-      background-color: #006d3b; /* verde escuro */
-      color: white;
-      padding: 15px 20px;
-      font-weight: bold;
-      font-size: 20px;
-      position: sticky;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-      gap: 15px;
-    }
+    <style>
+        /* ---------------------------------------------------- */
+        /* VARIÁVEIS DE CORES E FONTES DO DESIGN ORIGINAL */
+        /* ---------------------------------------------------- */
+        :root {
+            --color-dark-green: #0a3621; /* Fundo principal */
+            --color-text-light: #e0e0e0; /* Texto claro */
+            --color-text-heading: #f0f0f0; /* Títulos */
+            --color-gold: #c2954a; /* Cor de destaque (botão e ícones) */
 
-    /* Estilo da frase destaque */
-    h2.atencao {
-      color: #e0ffe0; /* verde claro para melhor contraste */
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      animation: pulse 2s infinite;
-    }
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
 
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.1); opacity: 0.8; }
-      100% { transform: scale(1); opacity: 1; }
-    }
+        /* ---------------------------------------------------- */
+        /* ESTILOS GLOBAIS E BODY */
+        /* ---------------------------------------------------- */
+        body {
+            margin: 0;
+            /* Usamos o verde escuro da imagem como fundo */
+            background-color: var(--color-dark-green);
+            color: var(--color-text-light);
+            font-family: var(--font-body);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-    a.button {
-      display: block;
-      text-align: center;
-      background-color: #00994d; /* verde principal */
-      color: white;
-      text-decoration: none;
-      padding: 15px 25px;
-      border-radius: 8px;
-      font-size: 18px;
-      font-weight: bold;
-      width: 100%;
-      max-width: 250px;
-      transition: all 0.3s ease;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* sombra */
-      text-shadow: 0px 1px 2px rgba(0,0,0,0.3);
-    }
+        /* ---------------------------------------------------- */
+        /* HEADER (TOPO) */
+        /* ---------------------------------------------------- */
+        header {
+            /* Fundo da header torna-se igual ao body para um look limpo */
+            background-color: var(--color-dark-green);
+            color: var(--color-text-heading);
+            padding: 15px 40px;
+            font-weight: bold;
+            font-size: 1.5em; /* Aumenta um pouco o título */
+            text-align: center;
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        /* ---------------------------------------------------- */
+        /* MAIN (CONTEÚDO PRINCIPAL) */
+        /* ---------------------------------------------------- */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px 80px 20px; /* Mais padding em baixo */
+            gap: 25px; /* Aumenta a distância entre os botões */
+            width: 100%;
+            max-width: 600px; /* Limita a largura central para melhor leitura */
+            margin: 0 auto; /* Centraliza o bloco principal */
+        }
 
-    a.button:hover {
-      background-color: #00b359; /* verde mais claro no hover */
-      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6); /* sombra mais forte no hover */
-      transform: translateY(-2px); /* efeito levantar */
-    }
+        /* TÍTULO H2/Frase Destaque (Estilo do título principal da imagem) */
+        h2.atencao {
+            /* O seu texto original torna-se o subtítulo */
+            color: var(--color-text-light); 
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: 400; /* Mais leve que o título principal */
+            margin-bottom: 20px;
+            animation: none; /* Remove a animação pulse, priorizando o look clean */
+            line-height: 1.4;
+        }
 
-    /* Rodapé */
-    footer {
-      background-color: #006d3b;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      font-size: 14px;
-    }
+        /* ---------------------------------------------------- */
+        /* BOTÕES (AGORA ESTILO 'EXPLORE NOW') */
+        /* ---------------------------------------------------- */
+        a.button {
+            display: block;
+            text-align: center;
+            /* Gradiente do botão dourado/marrom da imagem */
+            background: linear-gradient(to bottom, #d4a956, #a87e36);
+            color: var(--color-dark-green); /* Texto escuro sobre o botão dourado */
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 50px; /* Curvatura total do botão original */
+            font-size: 1.1em;
+            font-weight: 700;
+            width: 100%;
+            max-width: 350px; /* Botões mais largos */
+            transition: all 0.3s ease;
+            /* Sombra mais subtil */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+            text-shadow: none; /* Remove a sombra do texto para um look limpo */
+        }
 
-    /* Responsividade */
-    @media (max-width: 400px) {
-      h2.atencao {
-        font-size: 20px;
-      }
-      a.button {
-        font-size: 16px;
-        padding: 12px 20px;
-      }
-    }
-  </style>
+        a.button:hover {
+            background: linear-gradient(to bottom, #e2bb69, #b58d41);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.7);
+            transform: translateY(-2px);
+        }
+
+        /* ---------------------------------------------------- */
+        /* RODAPÉ */
+        /* ---------------------------------------------------- */
+        footer {
+            /* Fundo igual ao body */
+            background-color: var(--color-dark-green);
+            color: var(--color-text-light);
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha divisória suave */
+        }
+
+        /* ---------------------------------------------------- */
+        /* RESPONSIVIDADE (Ajusta o tamanho dos botões em mobile) */
+        /* ---------------------------------------------------- */
+        @media (max-width: 400px) {
+            header {
+                padding: 15px 20px;
+            }
+            main {
+                gap: 20px;
+            }
+            h2.atencao {
+                font-size: 1.2em;
+            }
+            a.button {
+                font-size: 1em;
+                padding: 12px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    🌱 grow financially
-  </header>
+    <header>
+        <span style="color: var(--color-gold);">🌱 grow financially</span>
+    </header>
 
-  <main>
-    <h2 class="atencao">O primeiro passo para mudar começa aqui👇 </h2>
+    <main>
+        <h1 style="font-family: var(--font-heading); font-size: 3em; color: var(--color-text-heading); text-align: center; margin-bottom: 5px;">
+            Dê o Próximo Passo
+        </h1>
+        
+        <h2 class="atencao">O primeiro passo para mudar começa aqui👇</h2>
 
-    <!-- Botões -->
-    <a href="https://hotmart.com/pt-br/marketplace/produtos/o-segredo-para-lucrar-em-portugal/H98423270W" class="button" target="_blank" rel="noopener noreferrer">Plano Renda Express 🇵🇹</a>
-    <a href="https://growfinancially.github.io/ao/angola.html" class="button" target="_blank" rel="noopener noreferrer">Edições 🇦🇴</a>
-    <a href="https://go.hotmart.com/S102958876T" class="button" target="_blank" rel="noopener noreferrer">Renda Multiplataforma 🇧🇷</a>
-    <a href="https://go.hotmart.com/H102972712O" class="button" target="_blank" rel="noopener noreferrer">Como Vender com Sucesso em Angola 🇦🇴</a>
-    
-  </main>
+        <a href="https://hotmart.com/pt-br/marketplace/produtos/o-segredo-para-lucrar-em-portugal/H98423270W" class="button" target="_blank" rel="noopener noreferrer">Plano Renda Express 🇵🇹</a>
+        <a href="https://growfinancially.github.io/ao/angola.html" class="button" target="_blank" rel="noopener noreferrer">Edições 🇦🇴</a>
+        <a href="https://go.hotmart.com/S102958876T" class="button" target="_blank" rel="noopener noreferrer">Renda Multiplataforma 🇧🇷</a>
+        <a href="https://go.hotmart.com/H102972712O" class="button" target="_blank" rel="noopener noreferrer">Como Vender com Sucesso em Angola 🇦🇴</a>
+        
+    </main>
 
-  <footer>
-    @grow financially. Jackson Contreiras
-  </footer>
+    <footer>
+        @grow financially. Jackson Contreiras
+    </footer>
 </body>
 </html>
-
-
 
 
 
