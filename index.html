@@ -11,6 +11,14 @@
 
     <style>
         /* ---------------------------------------------------- */
+        /* CORREÇÃO PARA SCROLL HORIZONTAL (BOX-SIZING) */
+        /* Garante que o padding não adicione largura extra. */
+        /* ---------------------------------------------------- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        /* ---------------------------------------------------- */
         /* VARIÁVEIS DE CORES E FONTES DO DESIGN ORIGINAL */
         /* ---------------------------------------------------- */
         :root {
