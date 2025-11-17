@@ -37,23 +37,42 @@
         }
 
         /* ---------------------------------------------------- */
-        /* HEADER (TOPO) - AGORA MINIMALISTA */
+        /* HEADER (TOPO) - AGORA COM LUPA */
         /* ---------------------------------------------------- */
         header {
             background-color: var(--color-dark-green);
             color: var(--color-text-heading);
-            padding: 15px 40px; /* Mantém o espaçamento */
+            padding: 15px 40px;
             font-weight: bold;
-            font-size: 1.1em; /* Reduz ligeiramente o tamanho */
-            /* Alinhamento ao canto esquerdo: */
-            text-align: left; 
+            font-size: 1.1em;
             
-            /* Posição fixa no topo */
+            /* Usamos Flexbox para alinhar o logo à esquerda e a lupa à direita */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
             position: sticky;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
+        }
+
+        .logo-text {
+            /* O texto do logo */
+            color: var(--color-gold);
+        }
+
+        .search-icon {
+            /* Estilo da lupa */
+            color: var(--color-text-light);
+            font-size: 1.3em;
+            cursor: pointer; /* Indica que é clicável */
+            transition: color 0.2s;
+        }
+
+        .search-icon:hover {
+            color: var(--color-gold);
         }
         
         /* ---------------------------------------------------- */
@@ -133,7 +152,7 @@
         /* ---------------------------------------------------- */
         @media (max-width: 400px) {
             header {
-                padding: 15px 20px; /* Reduz o padding lateral em mobile */
+                padding: 15px 20px;
             }
             main {
                 gap: 20px;
@@ -153,13 +172,17 @@
 </head>
 <body>
     <header>
-        <span style="color: var(--color-gold);">🌱 grow financially</span>
+        <span class="logo-text">🌱 grow financially</span>
+
+        <a href="#" class="search-icon" aria-label="Pesquisar produtos">
+            <i class="fas fa-search"></i>
+        </a>
     </header>
 
     <main>
         
         
-        <h2 class="atencao">O primeiro passo para mudar começa aqui</h2>
+        <h2 class="atencao">O primeiro passo para mudar começa aqui👇</h2>
 
         <a href="https://hotmart.com/pt-br/marketplace/produtos/o-segredo-para-lucrar-em-portugal/H98423270W" class="button" target="_blank" rel="noopener noreferrer">Plano Renda Express 🇵🇹</a>
         <a href="https://go.hotmart.com/S102958876T" class="button" target="_blank" rel="noopener noreferrer">Renda Multiplataforma 🇧🇷</a>
@@ -173,10 +196,6 @@
     </footer>
 </body>
 </html>
-
-
-
-
 
 
 
