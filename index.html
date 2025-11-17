@@ -1,9 +1,10 @@
 
-        <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>🌱 grow financially</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -38,7 +39,7 @@
         }
 
         /* ---------------------------------------------------- */
-        /* HEADER (TOPO) - AGORA COM LUPA E CAMPO DE PESQUISA */
+        /* HEADER (TOPO) */
         /* ---------------------------------------------------- */
         header {
             background-color: var(--color-dark-green);
@@ -76,14 +77,14 @@
             color: var(--color-text-light);
             padding: 8px 12px;
             margin-right: 10px;
-            width: 0; /* Começa invisível */
+            width: 0; 
             opacity: 0;
             transition: width 0.3s ease, opacity 0.3s ease;
             font-family: var(--font-body);
         }
 
         #search-input.visible {
-            width: 180px; /* Expande ao ficar visível */
+            width: 180px; 
             opacity: 1;
         }
 
@@ -189,7 +190,7 @@
                 gap: 20px;
             }
             #search-input.visible {
-                width: 120px; /* Menor em mobile */
+                width: 120px; 
             }
             h1 {
                 font-size: 2.5em;
@@ -219,8 +220,7 @@
 
     <main>
         
-        
-        <h2 class="atencao">O primeiro passo para mudar começa aqui👇</h2>
+        <h2 class="atencao">O primeiro passo para mudar começa aqui</h2>
 
         <div class="button-list" id="product-list">
             <a href="https://hotmart.com/pt-br/marketplace/produtos/o-segredo-para-lucrar-em-portugal/H98423270W" class="button" target="_blank" rel="noopener noreferrer">Plano Renda Express 🇵🇹</a>
@@ -247,10 +247,10 @@
                 e.preventDefault();
                 searchInput.classList.toggle('visible');
                 if (searchInput.classList.contains('visible')) {
-                    searchInput.focus(); // Foca no campo para digitar
+                    searchInput.focus(); 
                 } else {
-                    searchInput.value = ''; // Limpa o campo ao esconder
-                    filterProducts(); // Reseta a lista de produtos
+                    searchInput.value = ''; 
+                    filterProducts(); 
                 }
             });
 
@@ -264,9 +264,9 @@
                     const buttonText = buttons[i].textContent || buttons[i].innerText;
                     
                     if (buttonText.toUpperCase().indexOf(filter) > -1) {
-                        buttons[i].style.display = ""; // Mostra o botão
+                        buttons[i].style.display = ""; 
                     } else {
-                        buttons[i].style.display = "none"; // Esconde o botão
+                        buttons[i].style.display = "none"; 
                     }
                 }
             }
@@ -274,6 +274,7 @@
     </script>
 </body>
 </html>
+
 
 
 
