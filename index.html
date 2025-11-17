@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+        <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +18,7 @@
             --color-dark-green: #0a3621; /* Fundo principal */
             --color-text-light: #e0e0e0; /* Texto claro */
             --color-text-heading: #f0f0f0; /* Títulos */
-            --color-gold: #c2954a; /* Cor de destaque (botão e ícones) */
+            --color-gold: #c2954a; /* Cor de destaque (botão) */
 
             --font-heading: 'Playfair Display', serif;
             --font-body: 'Montserrat', sans-serif;
@@ -37,7 +38,7 @@
         }
 
         /* ---------------------------------------------------- */
-        /* HEADER (TOPO) - AGORA COM LUPA */
+        /* HEADER (TOPO) - AGORA COM LUPA E CAMPO DE PESQUISA */
         /* ---------------------------------------------------- */
         header {
             background-color: var(--color-dark-green);
@@ -46,7 +47,6 @@
             font-weight: bold;
             font-size: 1.1em;
             
-            /* Usamos Flexbox para alinhar o logo à esquerda e a lupa à direita */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -59,20 +59,43 @@
         }
 
         .logo-text {
-            /* O texto do logo */
-            color: var(--color-gold);
+            color: var(--color-text-light);
+        }
+        
+        /* Contém o campo de pesquisa e a lupa */
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Estilo do campo de texto (invisível por padrão) */
+        #search-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--color-text-light);
+            border-radius: 5px;
+            color: var(--color-text-light);
+            padding: 8px 12px;
+            margin-right: 10px;
+            width: 0; /* Começa invisível */
+            opacity: 0;
+            transition: width 0.3s ease, opacity 0.3s ease;
+            font-family: var(--font-body);
+        }
+
+        #search-input.visible {
+            width: 180px; /* Expande ao ficar visível */
+            opacity: 1;
         }
 
         .search-icon {
-            /* Estilo da lupa */
             color: var(--color-text-light);
             font-size: 1.3em;
-            cursor: pointer; /* Indica que é clicável */
+            cursor: pointer;
             transition: color 0.2s;
         }
 
         .search-icon:hover {
-            color: var(--color-gold);
+            color: var(--color-gold); 
         }
         
         /* ---------------------------------------------------- */
@@ -90,7 +113,7 @@
             margin: 0 auto;
         }
 
-        /* TÍTULO H1 PRINCIPAL */
+        /* TÍTULO H1 PRINCIPAL (Estilo Playfair Display) */
         h1 {
             font-family: var(--font-heading);
             font-size: 3em;
@@ -112,6 +135,14 @@
         /* ---------------------------------------------------- */
         /* BOTÕES */
         /* ---------------------------------------------------- */
+        .button-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            width: 100%;
+        }
+
         a.button {
             display: block;
             text-align: center;
@@ -150,12 +181,15 @@
         /* ---------------------------------------------------- */
         /* RESPONSIVIDADE */
         /* ---------------------------------------------------- */
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
             header {
                 padding: 15px 20px;
             }
             main {
                 gap: 20px;
+            }
+            #search-input.visible {
+                width: 120px; /* Menor em mobile */
             }
             h1 {
                 font-size: 2.5em;
@@ -173,37 +207,73 @@
 <body>
     <header>
         <span class="logo-text">🌱 grow financially</span>
-
-        <a href="#" class="search-icon" aria-label="Pesquisar produtos">
-            <i class="fas fa-search"></i>
-        </a>
+        
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Pesquisar produtos...">
+            
+            <a href="#" class="search-icon" aria-label="Pesquisar produtos" id="search-toggle">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
     </header>
 
     <main>
-        
+        <h1>Dê o Próximo Passo</h1>
         
         <h2 class="atencao">O primeiro passo para mudar começa aqui👇</h2>
 
-        <a href="https://hotmart.com/pt-br/marketplace/produtos/o-segredo-para-lucrar-em-portugal/H98423270W" class="button" target="_blank" rel="noopener noreferrer">Plano Renda Express 🇵🇹</a>
-        <a href="https://go.hotmart.com/S102958876T" class="button" target="_blank" rel="noopener noreferrer">Renda Multiplataforma 🇧🇷</a>
-        <a href="https://growfinancially.github.io/ao/angola.html" class="button" target="_blank" rel="noopener noreferrer">Edições 🇦🇴</a>
-        <a href="https://go.hotmart.com/H102972712O" class="button" target="_blank" rel="noopener noreferrer">Como Vender com Sucesso em Angola 🇦🇴</a>
-        
+        <div class="button-list" id="product-list">
+            <a href="https://hotmart.com/pt-br/marketplace/produtos/o-segredo-para-lucrar-em-portugal/H98423270W" class="button" target="_blank" rel="noopener noreferrer">Plano Renda Express 🇵🇹</a>
+            <a href="https://go.hotmart.com/S102958876T" class="button" target="_blank" rel="noopener noreferrer">Renda Multiplataforma 🇧🇷</a>
+            
+            <a href="https://go.hotmart.com/H102972712O" class="button" target="_blank" rel="noopener noreferrer">Como Vender com Sucesso em Angola 🇦🇴</a>
+            <a href="https://growfinancially.github.io/ao/angola.html" class="button" target="_blank" rel="noopener noreferrer">Edições 🇦🇴</a>
+        </div>
     </main>
 
     <footer>
         @grow financially. Jackson Contreiras
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchToggle = document.getElementById('search-toggle');
+            const searchInput = document.getElementById('search-input');
+            const productList = document.getElementById('product-list');
+            const buttons = productList.getElementsByClassName('button');
+
+            // 1. Função para MOSTRAR/ESCONDER o campo de pesquisa
+            searchToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                searchInput.classList.toggle('visible');
+                if (searchInput.classList.contains('visible')) {
+                    searchInput.focus(); // Foca no campo para digitar
+                } else {
+                    searchInput.value = ''; // Limpa o campo ao esconder
+                    filterProducts(); // Reseta a lista de produtos
+                }
+            });
+
+            // 2. Função para FILTRAR os botões enquanto o utilizador digita
+            searchInput.addEventListener('keyup', filterProducts);
+            
+            function filterProducts() {
+                const filter = searchInput.value.toUpperCase();
+                
+                for (let i = 0; i < buttons.length; i++) {
+                    const buttonText = buttons[i].textContent || buttons[i].innerText;
+                    
+                    if (buttonText.toUpperCase().indexOf(filter) > -1) {
+                        buttons[i].style.display = ""; // Mostra o botão
+                    } else {
+                        buttons[i].style.display = "none"; // Esconde o botão
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
 
 
 
