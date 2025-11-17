@@ -1,4 +1,4 @@
-<!DOCTYPE html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
@@ -28,7 +28,6 @@
         /* ---------------------------------------------------- */
         body {
             margin: 0;
-            /* Usamos o verde escuro da imagem como fundo */
             background-color: var(--color-dark-green);
             color: var(--color-text-light);
             font-family: var(--font-body);
@@ -38,19 +37,22 @@
         }
 
         /* ---------------------------------------------------- */
-        /* HEADER (TOPO) */
+        /* HEADER (TOPO) - AGORA MINIMALISTA */
         /* ---------------------------------------------------- */
         header {
-            /* Fundo da header torna-se igual ao body para um look limpo */
             background-color: var(--color-dark-green);
             color: var(--color-text-heading);
-            padding: 15px 40px;
+            padding: 15px 40px; /* Mantém o espaçamento */
             font-weight: bold;
-            font-size: 1.5em; /* Aumenta um pouco o título */
-            text-align: center;
+            font-size: 1.1em; /* Reduz ligeiramente o tamanho */
+            /* Alinhamento ao canto esquerdo: */
+            text-align: left; 
+            
+            /* Posição fixa no topo */
             position: sticky;
             top: 0;
             left: 0;
+            width: 100%;
             z-index: 1000;
         }
         
@@ -62,45 +64,50 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px 20px 80px 20px; /* Mais padding em baixo */
-            gap: 25px; /* Aumenta a distância entre os botões */
+            padding: 40px 20px 80px 20px;
+            gap: 25px;
             width: 100%;
-            max-width: 600px; /* Limita a largura central para melhor leitura */
-            margin: 0 auto; /* Centraliza o bloco principal */
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        /* TÍTULO H2/Frase Destaque (Estilo do título principal da imagem) */
+        /* TÍTULO H1 PRINCIPAL */
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 3em;
+            color: var(--color-text-heading);
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        /* SUBTÍTULO (Frase de destaque original) */
         h2.atencao {
-            /* O seu texto original torna-se o subtítulo */
             color: var(--color-text-light); 
             text-align: center;
             font-size: 1.4em;
-            font-weight: 400; /* Mais leve que o título principal */
+            font-weight: 400;
             margin-bottom: 20px;
-            animation: none; /* Remove a animação pulse, priorizando o look clean */
             line-height: 1.4;
         }
 
         /* ---------------------------------------------------- */
-        /* BOTÕES (AGORA ESTILO 'EXPLORE NOW') */
+        /* BOTÕES */
         /* ---------------------------------------------------- */
         a.button {
             display: block;
             text-align: center;
-            /* Gradiente do botão dourado/marrom da imagem */
             background: linear-gradient(to bottom, #d4a956, #a87e36);
-            color: var(--color-dark-green); /* Texto escuro sobre o botão dourado */
+            color: var(--color-dark-green);
             text-decoration: none;
             padding: 15px 25px;
-            border-radius: 50px; /* Curvatura total do botão original */
+            border-radius: 50px;
             font-size: 1.1em;
             font-weight: 700;
             width: 100%;
-            max-width: 350px; /* Botões mais largos */
+            max-width: 350px;
             transition: all 0.3s ease;
-            /* Sombra mais subtil */
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
-            text-shadow: none; /* Remove a sombra do texto para um look limpo */
+            text-shadow: none;
         }
 
         a.button:hover {
@@ -113,24 +120,26 @@
         /* RODAPÉ */
         /* ---------------------------------------------------- */
         footer {
-            /* Fundo igual ao body */
             background-color: var(--color-dark-green);
             color: var(--color-text-light);
             text-align: center;
             padding: 10px;
             font-size: 14px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha divisória suave */
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* ---------------------------------------------------- */
-        /* RESPONSIVIDADE (Ajusta o tamanho dos botões em mobile) */
+        /* RESPONSIVIDADE */
         /* ---------------------------------------------------- */
         @media (max-width: 400px) {
             header {
-                padding: 15px 20px;
+                padding: 15px 20px; /* Reduz o padding lateral em mobile */
             }
             main {
                 gap: 20px;
+            }
+            h1 {
+                font-size: 2.5em;
             }
             h2.atencao {
                 font-size: 1.2em;
@@ -148,15 +157,13 @@
     </header>
 
     <main>
-        <h1 style="font-family: var(--font-heading); font-size: 3em; color: var(--color-text-heading); text-align: center; margin-bottom: 5px;">
-            Dê o Próximo Passo
-        </h1>
         
-        <h2 class="atencao">O primeiro passo para mudar começa aqui👇</h2>
+        
+        <h2 class="atencao">O primeiro passo para mudar começa aqui</h2>
 
         <a href="https://hotmart.com/pt-br/marketplace/produtos/o-segredo-para-lucrar-em-portugal/H98423270W" class="button" target="_blank" rel="noopener noreferrer">Plano Renda Express 🇵🇹</a>
-        <a href="https://growfinancially.github.io/ao/angola.html" class="button" target="_blank" rel="noopener noreferrer">Edições 🇦🇴</a>
         <a href="https://go.hotmart.com/S102958876T" class="button" target="_blank" rel="noopener noreferrer">Renda Multiplataforma 🇧🇷</a>
+        <a href="https://growfinancially.github.io/ao/angola.html" class="button" target="_blank" rel="noopener noreferrer">Edições 🇦🇴</a>
         <a href="https://go.hotmart.com/H102972712O" class="button" target="_blank" rel="noopener noreferrer">Como Vender com Sucesso em Angola 🇦🇴</a>
         
     </main>
